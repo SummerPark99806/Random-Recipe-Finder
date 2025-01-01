@@ -1,21 +1,54 @@
 body {
-    background-color: #464646  ;
+    background-color: #464646;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
 }
 
+html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;        /* Ensure full width */
+}
 
-
+/* Other styling */
 :root {
     --clr-dark: #0f172a;
 }
 
-
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;  /* Vertically center items */
+    align-items: center;      /* Horizontally center items */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #303030;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    overflow: hidden;    /* Prevent horizontal overflow */
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
+
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;              /* Allow buttons to wrap on smaller screens */
+    justify-content: center;      /* Horizontally center buttons */
+    align-items: center;          /* Vertically align buttons */
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;             /* Adds spacing between .container and .filter */
+    background-color: #202020;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;  /* Ensure padding is included in the element's width */
+}
+
 button {
     align-items: center;
     background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
@@ -28,7 +61,7 @@ button {
     font-size: 18px;
     justify-content: center;
     line-height: 1em;
-    max-width: 100%;
+    max-width: 100%;         /* Ensure buttons do not overflow */
     min-width: 140px;
     padding: 3px;
     text-decoration: none;
@@ -38,18 +71,14 @@ button {
     white-space: nowrap;
     cursor: pointer;
     transition: all 0.3s;
-    display: flex;
-    justify-self: center;
-    margin-top: 10px;
+    margin: 5px;  /* Space between buttons */
 }
 
-
-  
 button:active,
 button:hover {
     outline: 0;
 }
-  
+
 button span {
     background-color: rgb(255, 255, 255);
     padding: 16px 24px;
@@ -59,151 +88,97 @@ button span {
     transition: 300ms;
 }
 
-.findtext button span {
-    background-color: rgb(255, 255, 255);
-    padding: 16px 24px;
-    border-radius: 6px;
-    width: 60%;
-    height: 60%;
-    transition: 300ms;
-}
-  
 button:hover span {
     background: none;
 }
-  
+
 button:active {
     transform: scale(0.9);
 }
-  
-.tittle{
+
+.tittle {
     display: flex;
     justify-content: center;
     font-family: calibri;
     font-size: 30px;
-}
-
-.tittle h1{
     color: white;
 }
 
-.text img{
+.tittle h1 {
+    color: white;
+}
+
+.text img {
     height: 20px;
     width: 20px;
     left: 20px;
     margin-left: 10px;
 }
 
-.image img{
-    width: 500px;
-    height: 500px;
+.image img {
+    width: 100%;    /* Ensure image fits within container */
+    max-width: 500px; /* Limit max width for larger screens */
+    height: auto;     /* Maintain aspect ratio */
     display: flex;
     justify-self: center;
 }
 
-.name{
+.name {
     display: flex;
     justify-content: center;
     font-family: calibri;
     font-size: 20px;
     color: white;
-    
 }
 
-body {
-    background-color: #333;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-  
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #444;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
 }
 
-.filter {
-    width: 200px; /* Adjust the width as needed */
-    background-color: #181818;
-    padding: 20px;
-    position: fixed;
+.video iframe {
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100vh; /* Full viewport height */
-    margin-right: 10px;
-    left: 80px;
-    transform: translateY(10%);
-    border-radius: 8px;
-    max-height: 700px; 
-    overflow-y:auto ;
-    border: 1px transparent; 
-    padding: 10px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 
-
-.filter .btn {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    display: block; 
-    margin: 5px 0
-}
-  
-.image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-  
 .details {
     margin-top: 20px;
     text-align: center;
     font-size: 25px;
 }
-  
+
 .country {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-  
+
 .ingredients h3 {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
-  
+
 .ingredients ul {
     list-style-type: disc;
     padding: 0;
     margin: 0;
 }
-  
+
 .ingredients li {
     text-align: left;
     margin: 5px 0;
 }
-  
+
 .todo {
     display: flex;
     justify-content: center;
     font-family: calibri;
     font-size: 20px;
-    font-style:oblique ;
+    font-style: oblique;
     color: white;
     padding: 15px;
 }
-
